@@ -111,11 +111,28 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
       border-radius: 4px;
       width: calc(100% - 16px);
       box-sizing: border-box;
+      transition: background-color 0.2s ease;
+    }
+
+    mat-nav-list a:hover {
+      background-color: #e0e0e0;
+    }
+
+    mat-nav-list a:focus {
+      outline: none;
+    }
+
+    mat-nav-list a:active {
+      background-color: transparent !important;
     }
 
     mat-nav-list a.active {
       background-color: #e8eaf6;
       color: #3f51b5;
+    }
+
+    mat-nav-list a.active:hover {
+      background-color: #d1d5f7;
     }
 
     .toolbar {
