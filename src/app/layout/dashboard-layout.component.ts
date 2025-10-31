@@ -52,8 +52,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
       <mat-drawer-content>
         <mat-toolbar color="primary" class="toolbar">
-          <button mat-icon-button (click)="drawer.toggle()" *ngIf="isMobile">
-            <mat-icon>menu</mat-icon>
+          <button mat-icon-button (click)="toggleDrawer()" [attr.aria-label]="drawerOpened ? 'Close sidebar' : 'Open sidebar'">
+            <mat-icon>{{ drawerOpened ? 'menu_open' : 'menu' }}</mat-icon>
           </button>
           <span class="toolbar-title">Admin Dashboard</span>
           <span class="spacer"></span>
@@ -74,28 +74,43 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styles: [`
     .dashboard-container {
       height: 100vh;
+      overflow: hidden;
     }
 
     .sidebar {
       width: 260px;
       background-color: #f5f5f5;
+      overflow-x: hidden;
+      overflow-y: auto;
     }
 
     .sidebar-header {
-      padding: 20px;
+      padding: 16px;
       background-color: #3f51b5;
       color: white;
       margin-bottom: 10px;
+      box-sizing: border-box;
     }
 
     .sidebar-header h2 {
       margin: 0;
-      font-size: 20px;
+      font-size: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+
+    mat-nav-list {
+      padding: 0;
+      width: 100%;
     }
 
     mat-nav-list a {
       margin: 4px 8px;
       border-radius: 4px;
+      width: calc(100% - 16px);
+      box-sizing: border-box;
     }
 
     mat-nav-list a.active {
@@ -154,5 +169,9 @@ export class DashboardLayoutComponent {
     if (this.isMobile) {
       this.drawer.close();
     }
+  }
+
+  toggleDrawer() {
+    this.drawer.toggle();
   }
 }
