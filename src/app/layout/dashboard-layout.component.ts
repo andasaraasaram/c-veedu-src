@@ -24,7 +24,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
     <mat-drawer-container class="dashboard-container" autosize>
       <mat-drawer #drawer [mode]="drawerMode" [opened]="drawerOpened" class="sidebar">
         <div class="sidebar-header">
-          <h2>Admin Panel</h2>
+          <h2>One Place</h2>
         </div>
         <mat-nav-list>
           <a mat-list-item routerLink="/dashboard" routerLinkActive="active" (click)="closeMobileMenu()">
@@ -51,11 +51,11 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
       </mat-drawer>
 
       <mat-drawer-content>
-        <mat-toolbar color="primary" class="toolbar">
+        <mat-toolbar class="toolbar">
           <button mat-icon-button (click)="toggleDrawer()" [attr.aria-label]="drawerOpened ? 'Close sidebar' : 'Open sidebar'">
             <mat-icon>{{ drawerOpened ? 'menu_open' : 'menu' }}</mat-icon>
           </button>
-          <span class="toolbar-title">Admin Dashboard</span>
+          <!-- <span class="toolbar-title"></span> -->
           <span class="spacer"></span>
           <button mat-icon-button>
             <mat-icon>notifications</mat-icon>
