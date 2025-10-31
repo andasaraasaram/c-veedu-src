@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "c-veedu-src": {
+    "veedu": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -57,10 +57,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "c-veedu-src:build:production"
+              "buildTarget": "veedu:build:production"
             },
             "development": {
-              "buildTarget": "c-veedu-src:build:development"
+              "buildTarget": "veedu:build:development"
             }
           },
           "defaultConfiguration": "development"

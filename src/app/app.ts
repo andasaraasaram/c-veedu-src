@@ -8,7 +8,7 @@
 //   styleUrl: './app.css'
 // })
 // export class App {
-//   protected readonly title = signal('c-veedu-src');
+//   protected readonly title = signal('veedu');
 // }
 
 import { Component } from '@angular/core';
